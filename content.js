@@ -1,7 +1,9 @@
 var elements = document.getElementsByTagName('*');
 
 function toTitleCase(str){
-    return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
+    return str.replace(new RegExp('\\w+', 'g'), function(thing){
+        return thing.charAt(0).toUpperCase() + thing.substr(1).toLowerCase();
+    });
 }
 
 var wordsToReplace = [
