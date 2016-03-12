@@ -31,9 +31,8 @@ for(var i = 0; i < elements.length; i++){
                 for(var k = 0; k < wordsToReplace.length; k++){
                     var wordToReplace = wordsToReplace[k];
                     globalSearchString += wordToReplace[0] + '|';
-                    globalSearchString += toTitleCase(wordToReplace[0]) + '|';
                 }
-                replacedText = replacedText.replace(new RegExp('\\b(' + globalSearchString.substring(0, globalSearchString.length - 1) + ')\\b', 'g'), 'WAIT$1WAIT');
+                replacedText = replacedText.replace(new RegExp('\\b(' + globalSearchString.substring(0, globalSearchString.length - 1) + ')\\b', 'gi'), 'WAIT$1WAIT');
                 for(var k = 0; k < wordsToReplace.length; k++){
                     var wordToReplace = wordsToReplace[k];
                     replacedText = replacedText
